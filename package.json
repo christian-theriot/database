@@ -1,6 +1,6 @@
 {
   "name": "@theriot.dev/database",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An interface for working with databases",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Christian Theriot <christian@theriot.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@theriot.dev/env": "^1.0.0",
+    "@theriot.dev/env": "^0.0.2",
     "@types/express-session": "^1.17.5",
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
