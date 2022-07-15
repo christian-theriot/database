@@ -1,7 +1,7 @@
 import { SQL } from "..";
 import env from "@theriot.dev/env";
 
-describe("getDatabase fn", () => {
+describe("SQL Database", () => {
   let db: SQL.Database;
   const user = env.get("POSTGRES_USER");
   const pwd = env.get("POSTGRES_PASSWORD");
