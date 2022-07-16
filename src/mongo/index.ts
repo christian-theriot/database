@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
-import { Store } from "express-session";
-import MongoStore from "connect-mongo";
+import mongoose, { Connection, Schema } from 'mongoose';
+import { Store } from 'express-session';
+import MongoStore from 'connect-mongo';
 
 export class Database {
   private _CONNECTION_URL: string;
@@ -17,7 +17,7 @@ export class Database {
   get store() {
     if (!this._STORE) {
       this._STORE = MongoStore.create({
-        mongoUrl: this._CONNECTION_URL,
+        mongoUrl: this._CONNECTION_URL
       });
     }
 
@@ -32,3 +32,22 @@ export class Database {
     await mongoose.disconnect();
   }
 }
+
+export const ModelFactory = <
+  Attributes = { [key: string]: any },
+  Options = { [key: string]: any }
+>({
+  connection,
+  name,
+  attributes,
+  options
+}: {
+  connection: Connection;
+  name: string;
+  attributes?: Attributes;
+  options?: Options;
+}) => {
+  const schema = new Schema(attributes, options);
+
+  return connection.model(name, schema);
+};
