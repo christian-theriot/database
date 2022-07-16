@@ -1,6 +1,6 @@
 {
   "name": "@theriot.dev/database",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An interface for working with databases",
   "main": "dist/index.js",
   "scripts": {
