@@ -42,7 +42,7 @@ export const ModelFactory = <
   attributes,
   options
 }: {
-  connection: typeof mongoose;
+  connection: Connection;
   name: string;
   attributes?: Attributes;
   options?: Options;

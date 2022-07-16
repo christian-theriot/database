@@ -22,19 +22,23 @@ describe('Mongo Model Factory', () => {
   });
 
   it('can create a model using the factory', async () => {
-    Model = ModelFactory({
-      connection: mongoose,
-      name: 'test model',
-      attributes: {
-        name: String
-      }
-    });
+    try {
+      Model = ModelFactory({
+        connection: mongoose.connection,
+        name: 'test model',
+        attributes: {
+          name: String
+        }
+      });
 
-    const instance = await new Model();
-    instance.name = 'test';
-    await instance.save();
+      const instance = await new Model();
+      instance.name = 'test';
+      await instance.save();
 
-    const saved = await Model.findById(instance.id);
-    expect(saved.name).toBe('test');
+      const saved = await Model.findById(instance.id);
+      expect(saved.name).toBe('test');
+    } catch (e) {
+      console.log(e);
+    }
   });
 });
