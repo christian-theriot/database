@@ -1,9 +1,9 @@
 {
   "name": "@theriot.dev/database",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "An interface for working with databases",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index",
+  "typings": "dist/index",
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "tsc -p tsconfig.build.json",

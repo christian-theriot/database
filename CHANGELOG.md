@@ -1,5 +1,14 @@
 # @theriot.dev/database
 
+## v0.1.4
+
+- Allow options to be passed to Sequelize
+
+## v0.1.3
+
+- Rename types to typings
+- Remove file extensions
+
 ## v0.1.2
 
 - Export dist folder
