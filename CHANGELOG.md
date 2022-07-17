@@ -1,5 +1,9 @@
 # @theriot.dev/database
 
+## v0.1.2
+
+- Export dist folder
+
 ## v0.1.1
 
 - Add ability to define models for either SQL or MongoDB storage
