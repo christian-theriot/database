@@ -2,7 +2,8 @@ import {
   Sequelize,
   Model as SQLModel,
   ModelAttributes,
-  InitOptions
+  InitOptions,
+  Options
 } from 'sequelize';
 import { Store } from 'express-session';
 import connect from 'connect-session-sequelize';
@@ -15,8 +16,11 @@ export class Database {
   private _SEQUELIZE: Sequelize;
   private _STORE: Store;
 
-  constructor(connectionURL: string) {
-    this._SEQUELIZE = new Sequelize(connectionURL, { logging: false });
+  constructor(connectionURL: string, options: Options = { logging: false }) {
+    this._SEQUELIZE = new Sequelize(connectionURL, {
+      logging: false,
+      ...options
+    });
     this._STORE = new SQLStore({ db: this._SEQUELIZE });
   }
 
